@@ -48,8 +48,13 @@ void main()
   float factor = (d1+depth)/(d2+depth);
   vec2 r = vec2(0.5) - coord;
   vec2 offset = r * factor - r;
-  offset *= length(offset);
-  coord -= offset;
+
+  // This doesn't seem right, I need to do the math again.
+  //float zoom = d1/d2;
+  float zoom = length(offset);
+  offset *= zoom;
+
+  coord += offset;
 
   // Return the position shifted texture color
   outColor = texture(u_image, coord, 0.0);
@@ -88,8 +93,10 @@ function loadImages(urls, callback) {
 }
 
 loadImages([
-    "pics/kate1.jpg",
-    "pics/kate1-depth.png",
+    //"pics/kate1.jpg",
+    //"pics/kate1-depth.png",
+    "pics/pat1.jpg",
+    "pics/pat1-depth.png",
 ], render)
 
 function render(images) 
