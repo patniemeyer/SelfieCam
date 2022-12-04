@@ -1,2 +1,3 @@
+#!/bin/bash
 #php -S localhost:8080
-python -m SimpleHTTPServer
+python3 -m SimpleHTTPServer
