@@ -153,7 +153,7 @@ function makeTexture(gl, image, index) {
   function renderLoop(timeStamp) {
     //console.log("render: ", timeStamp);
     var timeLocation = gl.getUniformLocation(program, "u_time");
-    gl.uniform1f(timeLocation, timeStamp / 1000.0);
+    gl.uniform1f(timeLocation, timeStamp / 500.0);
 
     // Draw the rectangle.
     var primitiveType = gl.TRIANGLES;

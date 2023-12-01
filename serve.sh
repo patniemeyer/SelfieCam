@@ -1,3 +1,2 @@
 #!/bin/bash
-#php -S localhost:8080
-python3 -m SimpleHTTPServer
+python3 -m http.server 9000
